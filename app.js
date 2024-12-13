@@ -9,11 +9,13 @@ king.addEventListener("drag", dragging)
 
 king.addEventListener("dragstart", dragStart)
 
-function dragging (e) {
-    console.log(e.target + "is being dragged.")
-}
-
+let beingDragged 
 function dragStart (e) {
-    console.log("Dragging has started on" + e.target)
+    beingDragged = e.target
+    console.log("Dragging has started on" + beingDragged)
 
+}
+function dragging (e) {
+    console.log(beingDragged.id + "is being dragged.")
+    infoDisplay.textContent = "You are dragging a " + beingDragged.id
 }
