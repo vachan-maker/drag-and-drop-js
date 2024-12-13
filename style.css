@@ -32,3 +32,9 @@ body {
     width: 200px;
     height: 200px;
 }
+.highlight {
+    background: rgb(233, 102, 102);
+}
+.target {
+    border: 5px solid black;
+}

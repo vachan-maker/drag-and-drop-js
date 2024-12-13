@@ -10,7 +10,7 @@ king.addEventListener("dragstart", dragStart)
 squares.forEach(square => {
     square.addEventListener("dragover",  dragOver),
     square.addEventListener("dragenter", dragEnter),
-    square.addEventListener("drragleave", dragLeave),
+    square.addEventListener("dragleave", dragLeave),
     square.addEventListener("drop", drop),
     square.addEventListener("dragend", dragEnd)
 }
@@ -35,14 +35,17 @@ function dragOver (e) {
 
 function dragEnter (e) {
     console.log("You are entering " + e.target.classList)
+    e.target.classList.add("highlight")
 }
 
 function dragLeave(e) {
     console.log("You are leaving")
+    e.target.classList.add("remove")
 }
 
 function drop(e) {
     e.target.append(beingDragged)
+    e.target.classList.add("remove")
 }
 
 function dragEnd(e) {
