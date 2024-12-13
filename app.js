@@ -29,7 +29,7 @@ function dragging (e) {
 }
 
 function dragOver (e) {
-    e.preventDefault()
+    e.preventDefault() //prevent default behaviour on drag over
     console.log("You are dragging somehting over " + e.target.classList)
 }
 
@@ -40,12 +40,12 @@ function dragEnter (e) {
 
 function dragLeave(e) {
     console.log("You are leaving")
-    e.target.classList.add("remove")
+    e.target.classList.remove("highlight")
 }
 
 function drop(e) {
-    e.target.append(beingDragged)
-    e.target.classList.add("remove")
+    e.target.append(beingDragged) //appending the (item being dragged) king piece to the square
+    e.target.classList.remove("highlight")
 }
 
 function dragEnd(e) {
