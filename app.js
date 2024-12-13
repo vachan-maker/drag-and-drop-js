@@ -29,6 +29,7 @@ function dragging (e) {
 }
 
 function dragOver (e) {
+    e.preventDefault()
     console.log("You are dragging somehting over " + e.target.classList)
 }
 
@@ -41,7 +42,7 @@ function dragLeave(e) {
 }
 
 function drop(e) {
-    console.log("You have dropeed something")
+    e.target.append(beingDragged)
 }
 
 function dragEnd(e) {
