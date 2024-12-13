@@ -50,4 +50,7 @@ function drop(e) {
 
 function dragEnd(e) {
     console.log("You have dragned")
+    e.target.classList.add("target")
+    setTimeout(() => e.target.classList.remove("target"),100) //remove the border after a certain period of time
+    infoDisplay.textContent = ""
 }
